@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main() {
+int n, k;
+printf("Enter size of array: ");
+scanf("%d", &n);
+int arr[n];
+printf("Enter %d elements: ", n);
+for (int i = 0; i < n; i++) {
+    scanf("%d", &arr[i]);
+}
+printf("Enter k (number of right shifts): ");
+scanf("%d", &k);
+k = k % n; // to avoid unnecessary rotations
+int result[n];
+// right shift logic
+for (int i = 0; i < n; i++) {
+    result[ (i + k) % n] = arr[i];
+}
+printf("Array after right shifting by %d: ", k);
+for (int i = 0; i < n; i++) {
+    printf("%d", result[i]);
+}
+    return 0;
+}
